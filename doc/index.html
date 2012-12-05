@@ -1,0 +1,48 @@
+<h1>CurlHTMLBrowser: Simulating a browser using PHP</h1>
+
+<p>The CurlHTMLBrowser package is a package that will let you mimics a web browser. Using the Curl HTML Browser, you can
+easily query a web site in HTTP or HTTPS, and analyze the HTML answered. The Curl HTML Browser will handle sessions
+for you, so you can use it to log into a website and retrieve data from the logged part of the website.</p>
+
+<p>As the name implies, this package is based on the CURL library, and therefore, the CURL PHP extension
+must be installed on your machine.</p>
+
+
+
+<h2>Querying a web page</h2>
+
+This is as easy as calling:
+
+<pre>$browser = new CurlHTMLBrowser();
+
+// Perform the query
+$page = $browser->query("http://www.exemple.com/mysite");
+
+// Display the HTML:
+echo $page->getHTML();
+
+// Query a part of the page in XPath (here: get the "value" of the "login" textfield):
+$value = $page->xpathQuery("//input[@name='login']")->item(0)->getAttribute("value");
+</pre>
+
+You can of course pass parameters to your query, or perform POSTs instead of GETs call:
+
+<pre>// Perform a POST query
+$page = $browser->query("http://www.exemple.com/login", "post", 
+			array("login"   =>"mylogin",
+				  "password"=>"mypassword"
+			));
+</p>
+
+<h2>Why not using cURL directly?</h2>
+
+<p>The CurlHTMLBrowser class is based on cURL, but it will ease you from several common pains you have to handle manually.
+The CurlHTMLBrowser class will:</p>
+<ul>
+	<li>Correctly handle https:// requests (provided the php_openssl extension is installed)</li>
+	<li>Manage cookies and sessions for you</li>
+	<li>Manage redirects (it will directly load the redirected page)</li>
+	<li>Throw exceptions when an HTTP 4xx or 5xx status code is received</li>
+	<li>Parse the HTML for you so you can query it using XPath</li>
+</ul>
+<p>Furthermore, CurlHTMLBrowser is more intuitive than plain cURL, fully object-oriented and self-documented.</p>

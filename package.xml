@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://xsd.mouf-php.com/packages.xsd">
+	<displayName>Curl HTML Browser</displayName>
+	<shortDescription>This package contains a class that mimics a web browser. Using the Curl HTML Browser, you can
+	easily query a web site in HTTP or HTTPS, and analyze the HTML answered. The Curl HTML Browser will handle sessions
+	for you, so you can use it to log into a website and retrieve data from the logged part of the website.
+	As the name implies, this package is based on the CURL library, and therefore, the CURL PHP extension
+	must be installed on your machine.</shortDescription>
+	<docUrl></docUrl>
+	<doc>
+		<page url="index.html" title="Tutorial"></page>
+	</doc>		
+	<logo>logo.png</logo>
+	<requires>
+		<require>CurlHTMLBrowser.php</require>
+		<require>CurlHTMLPage.php</require>
+		<require>CurlHTMLBrowserException.php</require>
+		<require>CurlHTMLBrowser404Exception.php</require>
+		<require>CurlHTMLBrowser500Exception.php</require>
+	</requires>
+</package>

@@ -1,0 +1,23 @@
+{
+    "name": "mouf/utils.network.http.curlhtmlbrowser",
+    "description": "This package contains a class that mimics a web browser. Using the Curl HTML Browser, you can easily query a web site in HTTP or HTTPS, and analyze the HTML answered. The Curl HTML Browser will handle sessions for you, so you can use it to log into a website and retrieve data from the logged part of the website. As the name implies, this package is based on the CURL library, and therefore, the CURL PHP extension must be installed on your machine.",
+    "keywords": ["curl", "mouf", "browser", "network"],
+    "homepage": "https://github.com/thecodingmachine/utils.network.http.curlhtmlbrowser",
+    "type": "mouf-library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Négrier",
+            "email": "d.negrier@thecodingmachine.com",
+            "homepage": "http://mouf-php.com"
+        }
+    ],
+    "require": {
+    	"php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mouf": "src/"
+        }
+    }
+}
